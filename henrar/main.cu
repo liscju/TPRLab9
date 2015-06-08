@@ -24,7 +24,7 @@ void fun()
 	cublasSetVector(vector_size, sizeof(double), CPU_A, 1, GPU_A, 1);
 	cublasSetVector(vector_size, sizeof(double), CPU_B, 1, GPU_B, 1);
 
-	cublasDaxpy(vector_size, GPU_A, GPU_B, 1, GPU_C, 1);
+	cublasDaxpy(vector_size, *GPU_A, GPU_B, 1, GPU_C, 1);
 
 	cublasGetVector(vector_size, sizeof(double), GPU_C, 1, CPU_C, 1);
 
